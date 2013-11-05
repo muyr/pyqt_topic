@@ -16,7 +16,7 @@ except ImportError:
     from PyQt4.QtGui import *
 
 import sys
-(LANG_ZH, LANG_EN) = range(2)
+(LANG_ZH, LANG_EN) = range(2) # language type
 
 
 class MAbout(QDialog):
@@ -28,15 +28,15 @@ class MAbout(QDialog):
         mainLay = QVBoxLayout()
         mainLay.addWidget(self.label)
         self.setLayout(mainLay)
-        self.displayContentText()
+        self.updateContentText()
 
-    def displayContentText(self):
+    def updateContentText(self):
         self.setWindowTitle(self.tr('dialogTitle'))
         self.label.setText(self.tr('IamSubDialog'))
 
     def changeEvent(self, event):
         if event.type() == QEvent.LanguageChange:
-            self.displayContentText()
+            self.updateContentText()
         else:
             QWidget.changeEvent(self, event)
         
@@ -76,7 +76,7 @@ class MMainWindow(QWidget):
         about = MAbout(self)
         about.show()
 
-    def displayContentText(self):
+    def updateContentText(self):
         self.setWindowTitle(self.tr('mainTitle'))
         self.but1.setText(self.tr('button1'))
         self.but2.setText(self.tr('subDialog'))
@@ -84,7 +84,7 @@ class MMainWindow(QWidget):
 
     def changeEvent(self, event):
         if event.type() == QEvent.LanguageChange:
-            self.displayContentText()
+            self.updateContentText()
         else:
             QWidget.changeEvent(self, event)
             

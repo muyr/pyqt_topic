@@ -6,7 +6,7 @@
     <message>
         <location filename="main_translator.py" line="35"/>
         <source>IamSubDialog</source>
-        <translation type="unfinished">I am a sub-dialog</translation>
+        <translation>I am a sub-dialog</translation>
     </message>
     <message>
         <location filename="main_translator.py" line="34"/>
